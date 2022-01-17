@@ -7,10 +7,12 @@ import Landing from "./Landing";
 import Dashboard from "./Dashboard";
 import SurveyNew from "./surveys/SurveyNew";
 
-const App = () => {
+const App = (props) => {
+  const { fetchUser } = props;
+
   useEffect(() => {
-    this.props.fetchUser();
-  }, []);
+    fetchUser();
+  }, [fetchUser]);
 
   return (
     <BrowserRouter>

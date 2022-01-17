@@ -6,7 +6,7 @@ import SurveyField from "./SurveyField";
 import validateEmails from "../../utils/validateEmails";
 import formFields from "./formFields";
 
-const SurveyForm = () => {
+const SurveyForm = (props) => {
   const renderFields = () => {
     return _.map(formFields, ({ label, name }) => {
       return (
@@ -23,7 +23,7 @@ const SurveyForm = () => {
 
   return (
     <div>
-      <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
+      <form onSubmit={props.handleSubmit(props.onSurveySubmit)}>
         {renderFields()}
         <Link to="/surveys" className="red btn-flat white-text">
           Cancel

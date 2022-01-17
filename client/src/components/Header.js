@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Payments from "./Payments";
 
-const Header = () => {
+const Header = (props) => {
   const renderContent = () => {
-    switch (this.props.auth) {
+    switch (props.auth) {
       case null:
         return;
       case false:
@@ -23,7 +23,7 @@ const Header = () => {
             <Payments />
           </li>,
           <li key="3" style={{ margin: "0 10px" }}>
-            Credits: {this.props.auth.credits}
+            Credits: {props.auth.credits}
           </li>,
           <li key="2">
             <a href="/api/logout">Logout</a>
@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <nav>
       <div className="nav-wrapper">
-        <Link to={this.props.auth ? "/surveys" : "/"} className="brand-logo">
+        <Link to={props.auth ? "/surveys" : "/"} className="brand-logo">
           Emaily
         </Link>
         <ul className="right">{renderContent()}</ul>

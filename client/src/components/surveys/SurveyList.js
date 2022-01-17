@@ -2,13 +2,15 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchSurveys } from "../../actions";
 
-const SurveyList = () => {
+const SurveyList = (props) => {
+  const { fetchSurveys } = props;
+
   useEffect(() => {
-    this.props.fetchSurveys();
-  }, []);
+    fetchSurveys();
+  }, [fetchSurveys]);
 
   const renderSurveys = () => {
-    return this.props.surveys.reverse().map((survey) => {
+    return props.surveys.reverse().map((survey) => {
       return (
         <div className="card blue-grey darken-1" key={survey._id}>
           <div className="card-content">
