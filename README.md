@@ -1,4 +1,4 @@
-# Emaily
+# Maily
 
 Web App to send surveys to a list of recipients and collect the answers. Made with React, Redux, Node.js and MongoDB.
 
